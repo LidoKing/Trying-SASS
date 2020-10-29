@@ -1,0 +1,13 @@
+{
+  "name": "tryingscss",
+  "version": "1.0.0",
+  "description": "Trying SCSS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "c": "sass scss/main.sass css/main.css"
+  },
+  "author": "LidoKing",
+  "license": "ISC",
+  "dependencies": {}
+}

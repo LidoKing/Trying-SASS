@@ -1,0 +1,11 @@
+body {
+  background-color: blue;
+  color: black;
+  font-size: 2em;
+  display: grid;
+}
+body .hi {
+  background-color: red;
+}
+
+/*# sourceMappingURL=main.css.map */
