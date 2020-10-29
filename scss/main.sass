@@ -1,11 +1,10 @@
-$mainColour: blue
-$secondaryColour: red
+@use "colours"
 
 body
-  background-color: $mainColour
+  background-color: colours.$primary
   color: black
   font-size: 2em
   display: grid
 
   .hi
-    background-color: $secondaryColour
+    background-color: colours.$secondary
