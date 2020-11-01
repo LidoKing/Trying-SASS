@@ -1,9 +1,19 @@
-@import "_clearDefaults"
+//import partials to clear CSS defaults
+@use "clearDefaults"
+
+//random trick that can change 'br' height
+@mixin brHeight($desiredHeight)
+  //give it a width
+  display: block
+  //clear default height
+  content: ""
+  //state height
+  margin-top: $desiredHeight
 
 nav
   width: 100%
   height: 70px
-  background-color: black
+  background: black
   color: white
 
   .nav
@@ -11,3 +21,29 @@ nav
     height: 100%
     align-items: center
     justify-content: space-around
+
+    a
+      font-size: 1.2em
+
+main
+  background: #f2d826
+  text-align: center
+  width: 100%
+  padding: 1.5em 0 3em 0
+  clip-path: polygon(50% 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0)
+
+  .logo
+    width: 20em
+
+  .banner
+    margin-top: .6em
+    color: white
+
+    h1
+      font-size: 2.4em
+      line-height: 1.2em
+      text-transform: uppercase
+
+    p
+      font-size: 1.3em
+      margin-top: .8em
