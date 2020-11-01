@@ -30,9 +30,26 @@ nav .nav {
 nav .nav a {
   font-size: 1.2em;
 }
+nav .nav .dropdown {
+  position: absolute;
+  opacity: 0;
+  z-index: 2;
+  background: black;
+  border-top: 2px solid white;
+  margin-top: 1.5em;
+  padding: 0 3em 0.5em 3em;
+  transform: translate(-25%);
+  transition: opacity 0.15s ease-out;
+}
+nav .nav .dropdown li {
+  margin-top: 0.5em;
+}
+nav .nav .hasDropdown:focus-within .dropdown {
+  opacity: 1;
+}
 
 main {
-  background: #f2d826;
+  background: linear-gradient(to bottom, #472e6e, #8e4fa7);
   text-align: center;
   width: 100%;
   padding: 1.5em 0 3em 0;
