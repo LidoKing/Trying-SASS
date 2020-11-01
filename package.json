@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "w": "sass --watch scss:css"
+    "w": "sass --watch sass:css"
   },
   "author": "LidoKing",
   "license": "ISC",
