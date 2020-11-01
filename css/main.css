@@ -18,8 +18,8 @@ a {
 nav {
   width: 100%;
   height: 70px;
-  background: black;
-  color: white;
+  background: var(--nav-bg);
+  color: var(--nav-font);
 }
 nav .nav {
   display: flex;
@@ -49,10 +49,10 @@ nav .nav .hasDropdown:focus-within .dropdown {
 }
 
 main {
-  background: linear-gradient(to bottom, #472e6e, #8e4fa7);
+  background: vaR(--banner-bg);
   text-align: center;
   width: 100%;
-  padding: 1.5em 0 3em 0;
+  padding: 1.5em 0 3.5em 0;
   clip-path: polygon(50% 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 main .logo {
@@ -60,7 +60,7 @@ main .logo {
 }
 main .banner {
   margin-top: 0.6em;
-  color: white;
+  color: var(--banner-font);
 }
 main .banner h1 {
   font-size: 2.4em;
