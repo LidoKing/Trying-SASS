@@ -22,24 +22,21 @@ a {
 .light {
   --bg: white;
   --nav-bg: black;
-  --nav-font: white;
   --banner-bg: linear-gradient(to bottom, #472e6e, #8e4fa7);
-  --banner-font: white;
+  --themeCircle: white;
 }
 
 .dark {
   --bg: white;
   --nav-bg: linear-gradient(to bottom, #472e6e, #8e4fa7);
-  --nav-font: white;
   --banner-bg: black;
-  --banner-font: white;
+  --themeCircle: black;
 }
 
 nav {
   width: 100%;
   height: 70px;
   background: var(--nav-bg);
-  color: var(--nav-font);
 }
 nav .nav {
   display: flex;
@@ -49,23 +46,19 @@ nav .nav {
 }
 nav .nav a {
   font-size: 1.9rem;
+  color: white;
 }
-nav .nav .dropdown {
-  position: absolute;
-  opacity: 0;
-  z-index: 2;
-  background: black;
-  border-top: 2px solid white;
-  margin-top: 1.5em;
-  padding: 0 3em 0.5em 3em;
-  transform: translate(-25%);
-  transition: opacity 0.15s ease-out;
-}
-nav .nav .dropdown li {
-  margin-top: 0.5em;
-}
-nav .nav .hasDropdown:focus-within .dropdown {
-  opacity: 1;
+nav .nav #toggle::after {
+  content: "";
+  position: relative;
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background: var(--themeCircle);
+  margin-left: 1rem;
+  top: 0.5rem;
+  transition: background 0.3s ease-out;
 }
 
 .banner {
@@ -80,7 +73,7 @@ nav .nav .hasDropdown:focus-within .dropdown {
 }
 .banner .description {
   margin-top: 2rem;
-  color: var(--banner-font);
+  color: white;
 }
 .banner .description h1 {
   font-size: 4rem;
