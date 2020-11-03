@@ -1,4 +1,4 @@
-const express = require('express'); // import express
+/*const express = require('express'); // import express
 const app = express(); // create instance of express app
 const port = 3000; // declare local host post
 const {readFile} = require('fs'); //import function from node file system module
@@ -25,9 +25,11 @@ app.get('/', (request, response) => {
 });
 */
 
+/*
 app.use(express.static('public'))
 
 //listen to incoming requests
 app.listen(port, () => {
   console.log(`App available on http://localhost:${port}`)
 });
+*/
