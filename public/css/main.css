@@ -50,7 +50,7 @@ nav .nav a {
 }
 nav .nav #toggle::after {
   content: "";
-  position: relative;
+  position: absolute;
   display: inline-block;
   width: 2.5rem;
   height: 2.5rem;
@@ -58,7 +58,7 @@ nav .nav #toggle::after {
   border: 3px solid white;
   background: var(--themeCircle);
   margin-left: 1rem;
-  top: 0.7rem;
+  top: 2.1rem;
   transition: background 0.3s ease-out;
 }
 
