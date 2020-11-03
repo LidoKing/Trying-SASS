@@ -34,6 +34,9 @@ nav .nav a {
   font-size: 1.9rem;
   color: white;
 }
+nav .nav #toggle {
+  margin-right: 2.5rem;
+}
 nav .nav #toggle::after {
   content: "";
   position: absolute;
