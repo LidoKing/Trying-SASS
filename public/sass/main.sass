@@ -37,12 +37,47 @@ body
   .description
     margin-top: 2rem
     color: white
+    text-align: center
 
     h1
       font-size: 4rem
       line-height: 5rem
       text-transform: uppercase
 
+      #br2
+        display: none
+
     p
       font-size: 2.5rem
       margin-top: 1.5rem
+
+@media screen and (min-width: 1200px)
+  .banner
+    display: flex
+    padding: 2.8rem 0 12rem 0
+    justify-content: center
+    align-items: center
+    flex-direction: row-reverse
+
+    .logo
+      width: 45rem
+      @include vendorPrefixes.transform(ScaleX(-1))
+
+    .description
+      margin: 0
+      text-align: left
+      padding: 6.5rem 5rem 0 0
+
+      h1
+        font-size: 5.5rem
+        line-height: 8rem
+
+        #br1
+          display: none
+
+        #br2
+          display: inline
+
+      p
+        font-size: 3.5rem
+        margin-top: 2.8rem
