@@ -6,14 +6,14 @@
 //themes
 .light
   --bg: white
-  --nav-bg: black
+  --nav-font: black
   --banner-bg: linear-gradient(to bottom, #472e6e, #8e4fa7)
   --themeCircle: white
 
 .dark
-  --bg: white
-  --nav-bg: linear-gradient(to bottom, #472e6e, #8e4fa7)
-  --banner-bg: black
+  --bg: #212121
+  --nav-font: white
+  --banner-bg: linear-gradient(to bottom, #424242, #8c8c8c)
   --themeCircle: black
 
 //random trick that can change 'br' height
@@ -25,10 +25,13 @@
   //state height
   margin-top: $desiredHeight
 
+body
+  background: var(--bg)
+
 nav
   width: 100%
   height: 70px
-  background: var(--nav-bg)
+  background: black
 
   .nav
     display: flex
@@ -47,9 +50,10 @@ nav
       width: 2.5rem
       height: 2.5rem
       border-radius: 50%
+      border: 3px solid white
       background: var(--themeCircle)
       margin-left: 1rem
-      top: .5rem
+      top: .7rem
       transition: background .3s ease-out
 
 .banner
