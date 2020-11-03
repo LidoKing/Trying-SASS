@@ -48,4 +48,10 @@ nav .nav #toggle::after {
   transition: background 0.3s ease-out;
 }
 
+h1 {
+  text-align: center;
+  margin-top: 10rem;
+  font-size: 5rem;
+}
+
 /*# sourceMappingURL=contact.css.map */
