@@ -49,6 +49,10 @@ nav .nav #toggle::after {
   margin-left: 1rem;
   top: 2.1rem;
   transition: background 0.3s ease-out;
+  -webkit-transition: background 0.3s ease-out;
+  -moz-transition: background 0.3s ease-out;
+  -o-transition: background 0.3s ease-out;
+  -ms-transition: background 0.3s ease-out;
 }
 
 h1 {
