@@ -3,7 +3,7 @@
 
 nav
   width: 100%
-  height: 70px
+  height: 80px
   background: black
 
   .nav
@@ -12,17 +12,41 @@ nav
     align-items: center
     justify-content: space-around
 
-    a
-      font-size: 1.9rem
-      color: white
+    .container
+      position: relative
+      display: block
+      padding: .2rem 0
 
+      .animation
+        font-size: 2.2rem
+        color: white
+        letter-spacing: 1px
+
+        &::after
+          width: 0
+          height: 2.8px
+          content: ""
+          background-color: white
+          position: absolute
+          top: 100%
+          left: 50%
+          @include vendorPrefixes.transition(all 0.3s ease)
+
+        &:hover
+          &::after
+            width: 100%
+            left: 0
+            right: 0
 
 
     #toggle
-      margin-right: 2.5rem
+      margin-right: 2rem
+      color: white
+      font-size: 2.2rem
+      letter-spacing: 1px
 
       &::after
-        content: ''
+        content: ""
         position: absolute
         display: inline-block
         width: 2.5rem
@@ -31,5 +55,5 @@ nav
         border: 3px solid white
         background: var(--themeCircle)
         margin-left: 1rem
-        top: 2.1rem
+        top: 2.5rem
         @include vendorPrefixes.transition(background .3s ease-out)
