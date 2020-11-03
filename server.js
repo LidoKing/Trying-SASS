@@ -8,20 +8,24 @@ const {readFile} = require('fs'); //import function from node file system module
 // second argument: callback function to handle event
 // request = incoming data from user
 // response = outgoing data from server
+/*
 app.get('/', (request, response) => {
 
   // read html file with utf8 encoding
   readFile('./index.html', 'utf8', (err, html) => {
 
+    // respose to client when there is error
     if (err) {
-        response.status(500).send('server out of order'); // respose when error encounted
+        response.status(500).send('server out of order');
     }
 
-    response.send(html); // send response to client
+    // send response to client
+    response.send(html);
   });
 });
+*/
 
-app.use(express.static('css'))
+app.use(express.static('public'))
 
 //listen to incoming requests
 app.listen(port, () => {
