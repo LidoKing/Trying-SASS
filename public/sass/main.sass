@@ -63,20 +63,38 @@ body
   width: 100%
   height: auto
   @include flex(column, center)
+  margin: 10rem 0
 
   .container
-    width: 30rem
+    width: 50rem
     height: 35rem
-    background: #f0f0f0
+    background: #f5f5f5
     border-radius: 2rem
     @include flex(column, center, center)
-    margin-top: 8rem
+    box-shadow: 1.5px 1.5px #e0e0e0
+    margin-bottom: 7rem
+    @include vendorPrefixes.transition(all .2s ease-out)
 
-    label
-      font-size: 1.8rem
+    &:hover
+      width: 52rem
+      height: 36.4rem
 
-    input
-      width: 100%
+    h2
+      font-size: 3rem
+      margin-bottom: 2rem
+
+    form
+      width: 70%
+
+      label
+        font-size: 1.9rem
+
+      input
+        width: 100%
+        font-size: 1.5rem
+
+      .email-field
+        margin-bottom: 2rem
 
     button
       font-size: 2rem
@@ -86,7 +104,7 @@ body
       padding: .5rem 0
       border-radius: 2.2rem
       cursor: pointer
-      margin-top: 4rem
+      margin-top: 3.5rem
       border: black 3px solid
       @include vendorPrefixes.transition(all .2s ease-in)
 
@@ -94,10 +112,10 @@ body
         background: white
         color: #59018f
 
+// media query
+@media screen and (min-width: 1000px)
 
-
-
-@media screen and (min-width: 1200px)
+  // banner section
   .banner
     display: flex
     padding: 2.8rem 0 12rem 0
@@ -127,3 +145,7 @@ body
       p
         font-size: 3.5rem
         margin-top: 2.8rem
+
+  // firebase-auth section
+  #firebase-auth
+    @include flex(row, center, space-around)
