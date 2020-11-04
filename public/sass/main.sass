@@ -10,20 +10,27 @@
 // nav styling template
 @use "_nav"
 
-//1rem = 10px
+// 1rem = 10px
 
-//random trick that can change 'br' height
+// random trick that can change 'br' height
 @mixin brHeight($desiredHeight)
-  //give it a width
+  // give it a width
   display: block
-  //clear default height
+  // clear default height
   content: ""
-  //state height
+  // state height
   margin-top: $desiredHeight
+
+@mixin flex($direction: row, $align: center, $justify: center)
+  display: flex
+  flex-direction: $direction
+  align-items: $align
+  justify-content: $justify
 
 body
   background: var(--bg)
 
+// banner section
 .banner
   background: var(--banner-bg)
   text-align: center
@@ -50,6 +57,45 @@ body
     p
       font-size: 2.5rem
       margin-top: 1.5rem
+
+// firebase-auth section
+#firebase-auth
+  width: 100%
+  height: auto
+  @include flex(column, center)
+
+  .container
+    width: 30rem
+    height: 35rem
+    background: #f0f0f0
+    border-radius: 2rem
+    @include flex(column, center, center)
+    margin-top: 8rem
+
+    label
+      font-size: 1.8rem
+
+    input
+      width: 100%
+
+    button
+      font-size: 2rem
+      background: #59018f
+      color: white
+      width: 12rem
+      padding: .5rem 0
+      border-radius: 2.2rem
+      cursor: pointer
+      margin-top: 4rem
+      border: black 3px solid
+      @include vendorPrefixes.transition(all .2s ease-in)
+
+      &:hover
+        background: white
+        color: #59018f
+
+
+
 
 @media screen and (min-width: 1200px)
   .banner

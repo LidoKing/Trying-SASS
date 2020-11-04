@@ -129,6 +129,52 @@ body {
   margin-top: 1.5rem;
 }
 
+#firebase-auth {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#firebase-auth .container {
+  width: 30rem;
+  height: 35rem;
+  background: #f0f0f0;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 8rem;
+}
+#firebase-auth .container label {
+  font-size: 1.8rem;
+}
+#firebase-auth .container input {
+  width: 100%;
+}
+#firebase-auth .container button {
+  font-size: 2rem;
+  background: #59018f;
+  color: white;
+  width: 12rem;
+  padding: 0.5rem 0;
+  border-radius: 2.2rem;
+  cursor: pointer;
+  margin-top: 4rem;
+  border: black 3px solid;
+  transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -ms-transition: all 0.2s ease-in;
+}
+#firebase-auth .container button:hover {
+  background: white;
+  color: #59018f;
+}
+
 @media screen and (min-width: 1200px) {
   .banner {
     display: flex;
