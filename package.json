@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "sass --watch public/sass:public/css & node server.js",
+    "dev-express": "sass --watch public/sass:public/css & node server.js",
+    "dev-firebase": "sass --watch public/sass:public/css & firebase emulators:start",
     "compile": "sass --watch public/sass:public/css",
     "host": "firebase emulators:start",
     "deploy": "firebase deploy"
