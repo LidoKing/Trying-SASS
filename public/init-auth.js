@@ -14,13 +14,14 @@ firebase.initializeApp(firebaseConfig);
 
 // Get elements from DOM
 const regEmail = document.getElementById('reg-email');
-const regPw = document.getElementById('reg-pw')
+const regPw = document.getElementById('reg-pw');
 const regBut = document.getElementById('reg-but');
+
+let auth = firebase.auth();
 
 regBut.addEventListener('click', () => {
   let email = regEmail.value;
   let pw = regPw.value;
-  let auth = firebase.auth();
 
   // Firebase function
   let result = auth.createUserWithEmailAndPassword(email, pw);
@@ -39,4 +40,41 @@ regBut.addEventListener('click', () => {
 
     console.log(error);
   });
+});
+
+const logEmail = document.getElementById('log-email');
+const logPw = document.getElementById('log-pw');
+const logBut = document.getElementById('login-but');
+
+logBut.addEventListener('click', () => {
+  let email = logEmail.value;
+  let pw = logPw.value;
+
+  // Firebase function
+  let result = auth.signInWithEmailAndPassword(email, pw);
+
+  //Catch errors
+  result.catch(error => {
+    // Handle errors
+    let errorCode = error.code;
+    let errorMessage = error.message;
+
+    if (errorCode == 'auth/wrong-password') {
+      alert('Wrong password.');
+    } else {
+      alert(errorMessage);
+    }
+
+    console.log(error);
+  });
+});
+
+// Add realtime auth listener
+auth.onAuthStateChanged(user => {
+  // Check if user exists
+  if (user) {
+    console.log(user);
+  } else {
+    console.log('not logged in');
+  }
 });
