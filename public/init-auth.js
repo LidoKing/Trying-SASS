@@ -16,14 +16,19 @@ firebase.initializeApp(firebaseConfig);
 const regEmail = document.getElementById('reg-email');
 const regPw = document.getElementById('reg-pw');
 const regBut = document.getElementById('reg-but');
+const logEmail = document.getElementById('log-email');
+const logPw = document.getElementById('log-pw');
+const loginBut = document.getElementById('login-but');
+const logoutBut = document.getElementById('logout-but');
 
 let auth = firebase.auth();
 
+// Register
 regBut.addEventListener('click', () => {
   let email = regEmail.value;
   let pw = regPw.value;
 
-  // Firebase function
+  // Register new user
   let result = auth.createUserWithEmailAndPassword(email, pw);
 
   //Catch errors
@@ -42,15 +47,12 @@ regBut.addEventListener('click', () => {
   });
 });
 
-const logEmail = document.getElementById('log-email');
-const logPw = document.getElementById('log-pw');
-const logBut = document.getElementById('login-but');
-
-logBut.addEventListener('click', () => {
+// Login
+loginBut.addEventListener('click', () => {
   let email = logEmail.value;
   let pw = logPw.value;
 
-  // Firebase function
+  // Sign in user
   let result = auth.signInWithEmailAndPassword(email, pw);
 
   //Catch errors
@@ -69,12 +71,27 @@ logBut.addEventListener('click', () => {
   });
 });
 
+// Logout
+logoutBut.addEventListener('click', () => {
+  // Sign out currently authenticated user
+  auth.signOut();
+});
+
 // Add realtime auth listener
 auth.onAuthStateChanged(user => {
-  // Check if user exists
+  // Check if user is logged in
   if (user) {
+    // Log user info to console
     console.log(user);
+    console.log("Logged in.");
+
+    // Show logout button and hide login button
+    loginBut.style.display = "none";
+    logoutBut.style.display = "block";
+
   } else {
-    console.log('not logged in');
+    console.log('Logged out.');
+    logoutBut.style.display = "none";
+    loginBut.style.display = "block";
   }
 });
