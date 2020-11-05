@@ -154,10 +154,9 @@ body {
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
-}
-#firebase-auth .container:hover {
-  width: 52rem;
-  height: 36.4rem;
+  /*&:focus-within
+  * width: 52rem
+  * height: 36.4rem */
 }
 #firebase-auth .container h2 {
   font-size: 3rem;
