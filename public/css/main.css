@@ -154,9 +154,10 @@ body {
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
-  /*&:focus-within
-  * width: 52rem
-  * height: 36.4rem */
+}
+#firebase-auth .container:focus-within {
+  width: 52rem;
+  height: 36.4rem;
 }
 #firebase-auth .container h2 {
   font-size: 3rem;
@@ -175,7 +176,7 @@ body {
 #firebase-auth .container form .email-field {
   margin-bottom: 2rem;
 }
-#firebase-auth .container button {
+#firebase-auth .container #reg-but, #firebase-auth .container #logout-but, #firebase-auth .container #login-but {
   font-size: 2rem;
   background: #59018f;
   color: white;
@@ -185,15 +186,19 @@ body {
   cursor: pointer;
   margin-top: 3.5rem;
   border: black 3px solid;
+  display: show;
   transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;
 }
-#firebase-auth .container button:hover {
+#firebase-auth .container #reg-but:hover, #firebase-auth .container #logout-but:hover, #firebase-auth .container #login-but:hover {
   background: white;
   color: #59018f;
+}
+#firebase-auth .container #logout-but {
+  display: none;
 }
 
 @media screen and (min-width: 1000px) {

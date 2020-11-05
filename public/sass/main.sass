@@ -75,7 +75,7 @@ body
     margin-bottom: 7rem
     @include vendorPrefixes.transition(all .2s ease-out)
 
-    /*&:focus-within
+    &:focus-within
       width: 52rem
       height: 36.4rem
 
@@ -96,7 +96,7 @@ body
       .email-field
         margin-bottom: 2rem
 
-    button
+    #reg-but
       font-size: 2rem
       background: #59018f
       color: white
@@ -106,11 +106,19 @@ body
       cursor: pointer
       margin-top: 3.5rem
       border: black 3px solid
+      display: show
       @include vendorPrefixes.transition(all .2s ease-in)
 
       &:hover
         background: white
         color: #59018f
+
+    #login-but
+      @extend #reg-but
+
+    #logout-but
+      @extend #reg-but
+      display: none
 
 // media query
 @media screen and (min-width: 1000px)
