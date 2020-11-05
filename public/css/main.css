@@ -167,11 +167,14 @@ body {
   width: 70%;
 }
 #firebase-auth .container form label {
-  font-size: 1.9rem;
+  font-size: 2rem;
 }
 #firebase-auth .container form input {
   width: 100%;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  border: none;
+  border-bottom: 3px solid #c8c8c8;
+  background: transparent;
 }
 #firebase-auth .container form .email-field {
   margin-bottom: 2rem;
