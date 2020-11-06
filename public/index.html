@@ -38,42 +38,63 @@
         </div>
       </section>
 
+      <div id="welcome"></div>
+
       <section id="firebase-auth">
-        <div id="reg-container" class="container">
-          <h2>REGISTER</h2>
 
-          <form id="register">
-            <label for="email" class="email-label">Email:</label>
-            <br>
-            <input type="text" name="email" class="email-field" id="reg-email">
-            <br>
-            <label for="pw" class="pw-label">Password:</label>
-            <br>
-            <input type="password" name="pw" class="pw-field" id="reg-pw">
-          </form>
-
-          <button type="button" name="register" id="reg-but">Register</button>
+        <div class="switch-guide">
+          <span id="login">LOGIN</span>
+          <span id="register">REGISTER</span>
         </div>
 
-        <div id="login-container" class="container">
-          <h2>LOGIN</h2>
+        <label id="flip-switch">
+          <input type="checkbox" id="checkbox">
+          <span class="slider"></span>
+        </label>
 
-          <form id="login">
-            <label for="email" class="email-label">Email:</label>
-            <br>
-            <input type="text" name="email" class="email-field" id="log-email">
-            <br>
-            <label for="pw" class="pw-label">Password:</label>
-            <br>
-            <input type="password" name="pw" class="pw-field" id="log-pw">
-          </form>
 
-          <button type="button" name="login" id="login-but">Login</button>
-          <button type="button" name="logout" id="logout-but">Logout</button>
+        <div class="flip-card">
+          <div id="card-inner">
+            <div class="form-container" id="card-front">
+              <h2>LOGIN</h2>
+
+              <form id="login">
+                <label for="email" class="email-label">Email:</label>
+                <br>
+                <input type="text" name="email" class="email-field" id="log-email">
+                <br>
+                <label for="pw" class="pw-label">Password:</label>
+                <br>
+                <input type="password" name="pw" class="pw-field" id="log-pw">
+              </form>
+
+              <button type="button" name="login" id="login-but">Login</button>
+              <button type="button" name="logout" id="logout-but">Logout</button>
+            </div>
+
+            <div class="form-container" id="card-back">
+              <h2>REGISTER</h2>
+
+              <form id="register">
+                <label for="email" class="email-label">Email:</label>
+                <br>
+                <input type="text" name="email" class="email-field" id="reg-email">
+                <br>
+                <label for="pw" class="pw-label">Password:</label>
+                <br>
+                <input type="password" name="pw" class="pw-field" id="reg-pw">
+              </form>
+
+              <button type="button" name="register" id="reg-but">Register</button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <script src="init-auth.js"></script>
+    <script src="switch.js"></script>
+
+    </script>
   </body>
 </html>

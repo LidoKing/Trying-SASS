@@ -35,8 +35,10 @@ a {
 
 nav {
   width: 100%;
-  height: 80px;
-  background: black;
+  height: 90px;
+  background: transparent;
+  position: absolute;
+  z-index: 3;
 }
 nav .nav {
   display: flex;
@@ -50,7 +52,7 @@ nav .nav .container {
   padding: 0.2rem 0;
 }
 nav .nav .container .animation {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   color: white;
   letter-spacing: 1px;
 }
@@ -76,7 +78,7 @@ nav .nav .container .animation:hover::after {
 nav .nav #toggle {
   margin-right: 2rem;
   color: white;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   letter-spacing: 1px;
 }
 nav .nav #toggle::after {
@@ -89,7 +91,7 @@ nav .nav #toggle::after {
   border: 3px solid white;
   background: var(--themeCircle);
   margin-left: 1rem;
-  top: 2.5rem;
+  top: 3rem;
   transition: background 0.3s ease-out;
   -webkit-transition: background 0.3s ease-out;
   -moz-transition: background 0.3s ease-out;
@@ -105,7 +107,7 @@ body {
   background: var(--banner-bg);
   text-align: center;
   width: 100%;
-  padding: 2.8rem 0 6rem 0;
+  padding: 10rem 0 6rem 0;
   clip-path: polygon(50% 0, 100% 0, 100% 85%, 50% 100%, 0 85%, 0 0);
 }
 .banner .logo {
@@ -136,58 +138,155 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10rem 0;
+  margin: 8rem 0;
 }
-#firebase-auth .container {
+#firebase-auth .switch-guide {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 160px;
+  margin-bottom: 1rem;
+}
+#firebase-auth .switch-guide span {
+  font-size: 2rem;
+}
+#firebase-auth .switch-guide #register {
+  padding-left: 7rem;
+}
+#firebase-auth #flip-switch {
+  position: relative;
+  display: block;
+  width: 100px;
+  height: 34px;
+  margin-bottom: 3rem;
+}
+#firebase-auth #flip-switch #checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+#firebase-auth #flip-switch #checkbox:checked + .slider {
+  background: black;
+}
+#firebase-auth #flip-switch #checkbox:checked + .slider::before {
+  transform: translateX(66px);
+  -webkit-transform: translateX(66px);
+  -moz-transform: translateX(66px);
+  -o-transform: translateX(66px);
+  -ms-transform: translateX(66px);
+}
+#firebase-auth #flip-switch #checkbox:checked + #card-inner {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+}
+#firebase-auth #flip-switch .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #ccc;
+  transition: background 0.4s ease;
+  -webkit-transition: background 0.4s ease;
+  -moz-transition: background 0.4s ease;
+  -o-transition: background 0.4s ease;
+  -ms-transition: background 0.4s ease;
+  border-radius: 34px;
+}
+#firebase-auth #flip-switch .slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background: white;
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  border-radius: 50%;
+}
+#firebase-auth .flip-card {
   width: 50rem;
   height: 35rem;
-  background: #f5f5f5;
+  perspective: 2000px;
+}
+#firebase-auth .flip-card #card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 1s;
+  -webkit-transition: transform 1s;
+  -moz-transition: transform 1s;
+  -o-transition: transform 1s;
+  -ms-transition: transform 1s;
+  transform-style: preserve-3d;
+  box-shadow: 1.5px 1.5px #e0e0e0;
   border-radius: 2rem;
+  /*&:hover
+  * @include vendorPrefixes.transform(rotateY(180deg)) */
+}
+#firebase-auth .flip-card #card-inner #card-back {
+  transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  -ms-transform: rotateY(180deg);
+}
+#firebase-auth .flip-card #card-inner .form-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  background: #f5f5f5;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: 1.5px 1.5px #e0e0e0;
-  margin-bottom: 7rem;
   transition: all 0.2s ease-out;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   -o-transition: all 0.2s ease-out;
   -ms-transition: all 0.2s ease-out;
+  backface-visibility: hidden;
 }
-#firebase-auth .container:focus-within {
-  width: 52rem;
-  height: 36.4rem;
-}
-#firebase-auth .container h2 {
+#firebase-auth .flip-card #card-inner .form-container h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-#firebase-auth .container form {
+#firebase-auth .flip-card #card-inner .form-container form {
   width: 70%;
 }
-#firebase-auth .container form label {
+#firebase-auth .flip-card #card-inner .form-container form label {
   font-size: 2rem;
 }
-#firebase-auth .container form input {
+#firebase-auth .flip-card #card-inner .form-container form input {
   width: 100%;
   font-size: 1.8rem;
   border: none;
   border-bottom: 3px solid #c8c8c8;
   background: transparent;
+  outline: none;
 }
-#firebase-auth .container form .email-field {
+#firebase-auth .flip-card #card-inner .form-container form .email-field {
   margin-bottom: 2rem;
 }
-#firebase-auth .container #reg-but, #firebase-auth .container #logout-but, #firebase-auth .container #login-but {
+#firebase-auth .flip-card #card-inner .form-container #reg-but, #firebase-auth .flip-card #card-inner .form-container #logout-but, #firebase-auth .flip-card #card-inner .form-container #login-but {
   font-size: 2rem;
   background: #59018f;
   color: white;
   width: 12rem;
-  padding: 0.5rem 0;
-  border-radius: 2.2rem;
+  padding: 1rem 0;
+  border-radius: 1rem;
   cursor: pointer;
-  margin-top: 3.5rem;
+  margin-top: 3rem;
   border: black 3px solid;
   display: show;
   transition: all 0.2s ease-in;
@@ -196,19 +295,27 @@ body {
   -o-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;
 }
-#firebase-auth .container #reg-but:hover, #firebase-auth .container #logout-but:hover, #firebase-auth .container #login-but:hover {
+#firebase-auth .flip-card #card-inner .form-container #reg-but:hover, #firebase-auth .flip-card #card-inner .form-container #logout-but:hover, #firebase-auth .flip-card #card-inner .form-container #login-but:hover {
   background: white;
   color: #59018f;
 }
-#firebase-auth .container #logout-but {
+#firebase-auth .flip-card #card-inner .form-container #logout-but {
   display: none;
 }
 
-@media screen and (min-width: 1000px) {
+#welcome {
+  display: none;
+  text-align: center;
+  font-size: 4rem;
+  color: black;
+  margin-top: 6rem;
+}
+
+@media screen and (min-width: 1100px) {
   .banner {
     display: flex;
-    padding: 2.8rem 0 12rem 0;
-    justify-content: center;
+    padding: 12rem 0 12rem 0;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row-reverse;
   }
@@ -219,18 +326,15 @@ body {
     -moz-transform: ScaleX(-1);
     -o-transform: ScaleX(-1);
     -ms-transform: ScaleX(-1);
+    margin-right: 5rem;
   }
   .banner .description {
-    margin: 0;
     text-align: left;
-    padding: 6.5rem 5rem 0 0;
+    margin: 4rem 5rem 0 5rem;
   }
   .banner .description h1 {
     font-size: 5.5rem;
     line-height: 8rem;
-  }
-  .banner .description h1 #br1 {
-    display: none;
   }
   .banner .description h1 #br2 {
     display: inline;
@@ -238,13 +342,6 @@ body {
   .banner .description p {
     font-size: 3.5rem;
     margin-top: 2.8rem;
-  }
-
-  #firebase-auth {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
   }
 }
 
