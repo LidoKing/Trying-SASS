@@ -20,6 +20,7 @@ const logEmail = document.getElementById('log-email');
 const logPw = document.getElementById('log-pw');
 const loginBut = document.getElementById('login-but');
 const logoutBut = document.getElementById('logout-but');
+const welcome = document.getElementById('welcome');
 
 let auth = firebase.auth();
 
@@ -30,6 +31,7 @@ regBut.addEventListener('click', () => {
 
   // Register new user
   let result = auth.createUserWithEmailAndPassword(email, pw);
+
 
   //Catch errors
   result.catch(error => {
@@ -83,15 +85,22 @@ auth.onAuthStateChanged(user => {
   if (user) {
     // Log user info to console
     console.log(user);
-    console.log("Logged in.");
+    console.log('Logged in.')
 
     // Show logout button and hide login button
     loginBut.style.display = "none";
     logoutBut.style.display = "block";
 
+    // Welcome user
+    let email = user.email;
+    welcome.innerHTML = `Hello! ${email}`;
+    welcome.style.display = 'block';
+
   } else {
     console.log('Logged out.');
     logoutBut.style.display = "none";
     loginBut.style.display = "block";
+
+    welcome.style.display = "none";
   }
 });
