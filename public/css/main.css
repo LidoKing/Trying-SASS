@@ -37,8 +37,13 @@ nav {
   width: 100%;
   height: 90px;
   background: transparent;
-  position: absolute;
+  position: fixed;
   z-index: 3;
+  transition: background 0.2s ease;
+  -webkit-transition: background 0.2s ease;
+  -moz-transition: background 0.2s ease;
+  -o-transition: background 0.2s ease;
+  -ms-transition: background 0.2s ease;
 }
 nav .nav {
   display: flex;
@@ -99,6 +104,10 @@ nav .nav #toggle::after {
   -ms-transition: background 0.3s ease-out;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: var(--bg);
 }
@@ -140,7 +149,7 @@ body {
   justify-content: center;
   margin: 8rem 0;
 }
-#firebase-auth .switch-guide {
+#firebase-auth #switch-guide {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -148,10 +157,10 @@ body {
   width: 160px;
   margin-bottom: 1rem;
 }
-#firebase-auth .switch-guide span {
+#firebase-auth #switch-guide span {
   font-size: 2rem;
 }
-#firebase-auth .switch-guide #register {
+#firebase-auth #switch-guide #register {
   padding-left: 7rem;
 }
 #firebase-auth #flip-switch {
@@ -213,12 +222,12 @@ body {
   -ms-transition: all 0.4s ease;
   border-radius: 50%;
 }
-#firebase-auth .flip-card {
+#firebase-auth #flip-card {
   width: 50rem;
   height: 35rem;
   perspective: 2000px;
 }
-#firebase-auth .flip-card #card-inner {
+#firebase-auth #flip-card #card-inner {
   position: relative;
   width: 100%;
   height: 100%;
@@ -233,14 +242,14 @@ body {
   /*&:hover
   * @include vendorPrefixes.transform(rotateY(180deg)) */
 }
-#firebase-auth .flip-card #card-inner #card-back {
+#firebase-auth #flip-card #card-inner #card-back {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   -ms-transform: rotateY(180deg);
 }
-#firebase-auth .flip-card #card-inner .form-container {
+#firebase-auth #flip-card #card-inner .form-container {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -257,17 +266,17 @@ body {
   -ms-transition: all 0.2s ease-out;
   backface-visibility: hidden;
 }
-#firebase-auth .flip-card #card-inner .form-container h2 {
+#firebase-auth #flip-card #card-inner .form-container h2 {
   font-size: 3rem;
   margin-bottom: 2rem;
 }
-#firebase-auth .flip-card #card-inner .form-container form {
+#firebase-auth #flip-card #card-inner .form-container form {
   width: 70%;
 }
-#firebase-auth .flip-card #card-inner .form-container form label {
+#firebase-auth #flip-card #card-inner .form-container form label {
   font-size: 2rem;
 }
-#firebase-auth .flip-card #card-inner .form-container form input {
+#firebase-auth #flip-card #card-inner .form-container form input {
   width: 100%;
   font-size: 1.8rem;
   border: none;
@@ -275,10 +284,10 @@ body {
   background: transparent;
   outline: none;
 }
-#firebase-auth .flip-card #card-inner .form-container form .email-field {
+#firebase-auth #flip-card #card-inner .form-container form .email-field {
   margin-bottom: 2rem;
 }
-#firebase-auth .flip-card #card-inner .form-container #reg-but, #firebase-auth .flip-card #card-inner .form-container #logout-but, #firebase-auth .flip-card #card-inner .form-container #login-but {
+#firebase-auth #flip-card #card-inner .form-container #reg-but, #firebase-auth #flip-card #card-inner .form-container #logout-but, #firebase-auth #flip-card #card-inner .form-container #login-but {
   font-size: 2rem;
   background: #59018f;
   color: white;
@@ -295,11 +304,11 @@ body {
   -o-transition: all 0.2s ease-in;
   -ms-transition: all 0.2s ease-in;
 }
-#firebase-auth .flip-card #card-inner .form-container #reg-but:hover, #firebase-auth .flip-card #card-inner .form-container #logout-but:hover, #firebase-auth .flip-card #card-inner .form-container #login-but:hover {
+#firebase-auth #flip-card #card-inner .form-container #reg-but:hover, #firebase-auth #flip-card #card-inner .form-container #logout-but:hover, #firebase-auth #flip-card #card-inner .form-container #login-but:hover {
   background: white;
   color: #59018f;
 }
-#firebase-auth .flip-card #card-inner .form-container #logout-but {
+#firebase-auth #flip-card #card-inner .form-container #logout-but {
   display: none;
 }
 

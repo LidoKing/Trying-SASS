@@ -5,8 +5,9 @@ nav
   width: 100%
   height: 90px
   background: transparent
-  position: absolute
+  position: fixed
   z-index: 3
+  @include vendorPrefixes.transition(background .2s ease)
 
   .nav
     display: flex

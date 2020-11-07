@@ -27,6 +27,9 @@
   align-items: $align
   justify-content: $justify
 
+html
+  scroll-behavior: smooth
+
 body
   background: var(--bg)
 
@@ -65,7 +68,7 @@ body
   @include flex(column, center)
   margin: 8rem 0
 
-  .switch-guide
+  #switch-guide
     @include flex(row, center, space-between)
     width: 160px
     margin-bottom: 1rem
@@ -128,7 +131,7 @@ body
 
 
   // Define size of card
-  .flip-card
+  #flip-card
     width: 50rem
     height: 35rem
     perspective: 2000px
