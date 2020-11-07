@@ -22,7 +22,7 @@
       <ul class="nav">
         <li class="container"><a href="index.html" class="animation">Home</a></li>
         <li class="container"><a href="#" class="animation">About</a></li>
-        <li class="container"><a href="contact.html" class="animation">Contact</a></li>
+        <li class="container"><a href="#switch-guide" class="animation">Login/Register</a></li>
         <li>
           <a href="#" id="toggle">Change Themes</a>
         </li>
@@ -42,7 +42,7 @@
 
       <section id="firebase-auth">
 
-        <div class="switch-guide">
+        <div id="switch-guide">
           <span id="login">LOGIN</span>
           <span id="register">REGISTER</span>
         </div>
@@ -53,7 +53,7 @@
         </label>
 
 
-        <div class="flip-card">
+        <div id="flip-card">
           <div id="card-inner">
             <div class="form-container" id="card-front">
               <h2>LOGIN</h2>
@@ -92,8 +92,9 @@
       </section>
     </main>
 
-    <script src="init-auth.js"></script>
-    <script src="switch.js"></script>
+    <script defer src="navbar-scroll.js"></script>
+    <script defer src="init-auth.js"></script>
+    <script defer src="switch.js"></script>
 
     </script>
   </body>
